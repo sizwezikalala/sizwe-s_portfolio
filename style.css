@@ -14,7 +14,7 @@ html {
 
     background: linear-gradient(-80deg, rgba(0, 0, 0, 0.842),
             rgba(255, 205, 0, 0.514)),
-        url(/imgs/lite.jpeg);
+        url(lite.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -551,7 +551,7 @@ a {
 /* form */
 
 #form-container {
-    background-image: url(/imgs/contactme.jpeg);
+    background-image: url(contactme.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -666,7 +666,7 @@ input:focus {
     border: .1rem solid black;
     background: linear-gradient(20deg, rgba(0, 0, 0, 0.699),
             rgba(255, 204, 0, 0.315)),
-        url(/imgs/footer-bcolo.jpeg);
+        url(footer-bcolo.jpeg);
 
     background-size: cover;
     background-repeat: no-repeat;
