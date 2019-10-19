@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/ -->
+<html lang="en-US" class="jetpack-lazy-images-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="pingback" href="https://blog.logrocket.com/xmlrpc.php">
+<title>LocalStorage in JavaScript - LogRocket Blog</title>
+<!-- Jetpack Site Verification Tags -->
+
+<!-- This site is optimized with the Yoast SEO plugin v11.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Arm yourself with the knowledge and power of localStorage in JavaScript applications with these five different storage methods.">
+<link rel="canonical" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LocalStorage in JavaScript - LogRocket Blog">
+<meta property="og:description" content="Arm yourself with the knowledge and power of localStorage in JavaScript applications with these five different storage methods.">
+<meta property="og:url" content="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/">
+<meta property="og:site_name" content="LogRocket Blog">
+<meta property="article:section" content="Uncategorized">
+<meta property="article:published_time" content="2018-07-17T22:00:57+00:00">
+<meta property="article:modified_time" content="2019-07-24T20:09:28+00:00">
+<meta property="og:updated_time" content="2019-07-24T20:09:28+00:00">
+<meta property="og:image" content="https://storage.googleapis.com/blog-images-backup/1*krty-B-4mEibZa7er8Uz_A.jpeg">
+<meta property="og:image:secure_url" content="https://storage.googleapis.com/blog-images-backup/1*krty-B-4mEibZa7er8Uz_A.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Arm yourself with the knowledge and power of localStorage in JavaScript applications with these five different storage methods.">
+<meta name="twitter:title" content="LocalStorage in JavaScript - LogRocket Blog">
+<meta name="twitter:image" content="https://storage.googleapis.com/blog-images-backup/1*krty-B-4mEibZa7er8Uz_A.jpeg">
+<script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/munchkin.js"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/wootric-sdk.js"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/munchkin(1).js"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/zcgg0wlq"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/f.txt"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/heap-2744321076.js"></script><script src="./LocalStorage in JavaScript - LogRocket Blog_files/inferredEvents.js" async=""></script><script src="./LocalStorage in JavaScript - LogRocket Blog_files/111605826216653" async=""></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/fbevents.js"></script><script async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/uwt.js"></script><script type="text/javascript" async="" src="./LocalStorage in JavaScript - LogRocket Blog_files/a.js"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://blog.logrocket.com/#website","url":"https://blog.logrocket.com/","name":"LogRocket Blog","potentialAction":{"@type":"SearchAction","target":"https://blog.logrocket.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/#primaryimage","url":"https://storage.googleapis.com/blog-images-backup/1*krty-B-4mEibZa7er8Uz_A.jpeg"},{"@type":"WebPage","@id":"https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/#webpage","url":"https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/","inLanguage":"en-US","name":"LocalStorage in JavaScript - LogRocket Blog","isPartOf":{"@id":"https://blog.logrocket.com/#website"},"primaryImageOfPage":{"@id":"https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/#primaryimage"},"datePublished":"2018-07-17T22:00:57+00:00","dateModified":"2019-07-24T20:09:28+00:00","author":{"@id":"https://blog.logrocket.com/#/schema/person/913969cb082edc175dc762e002c4c1b7"},"description":"Arm yourself with the knowledge and power of localStorage in JavaScript applications with these five different storage methods."},{"@type":["Person"],"@id":"https://blog.logrocket.com/#/schema/person/913969cb082edc175dc762e002c4c1b7","name":"Nosa Obaseki","image":{"@type":"ImageObject","@id":"https://blog.logrocket.com/#authorlogo","url":"https://secure.gravatar.com/avatar/c0f71d3a974d11b26617982eea142544?s=96&d=mm&r=g","caption":"Nosa Obaseki"},"description":"Front-end Dev currently building amazing products @theflutterwave \ud83d\udc3c\ud83c\uddf3\ud83c\uddec","sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="LogRocket Blog » Feed" href="https://blog.logrocket.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="LogRocket Blog » Comments Feed" href="https://blog.logrocket.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="LogRocket Blog » LocalStorage in JavaScript Comments Feed" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blog.logrocket.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./LocalStorage in JavaScript - LogRocket Blog_files/wp-emoji-release.min(1).js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-theme-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/theme.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="github-embed-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/github-embed.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap4-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediumish-style-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ai_front = {"wp_ai":"5.2.2+2.5.0","insertion_before":"BEFORE","insertion_after":"AFTER","insertion_prepend":"PREPEND CONTENT","insertion_append":"APPEND CONTENT","insertion_replace_content":"REPLACE CONTENT","insertion_replace_element":"REPLACE ELEMENT","cancel":"Cancel","use":"Use","add":"Add","parent":"Parent","cancel_element_selection":"Cancel element selection","select_parent_element":"Select parent element","css_selector":"CSS selector","use_current_selector":"Use current selector","element":"ELEMENT","path":"PATH","selector":"SELECTOR","visible":"VISIBLE","hidden":"HIDDEN"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/ai-jquery.js"></script>
+<script type="text/javascript">
+function ai_insert(a,e,h){var f=-1!=e.indexOf(":eq")?jQuery(e):document.querySelectorAll(e);Array.prototype.forEach.call(f,function(b,f){selector_string=b.hasAttribute("id")?"#"+b.getAttribute("id"):b.hasAttribute("class")?"."+b.getAttribute("class").replace(RegExp(" ","g"),"."):"";var d=document.createElement("div");d.innerHTML=h;var c=d.getElementsByClassName("ai-selector-counter")[0];null!=c&&(c.innerText=f+1);c=d.getElementsByClassName("ai-debug-name ai-main")[0];if(null!=c){var g="";"before"==
+a?g=ai_front.insertion_before:"after"==a?g=ai_front.insertion_after:"prepend"==a?g=ai_front.insertion_prepend:"append"==a?g=ai_front.insertion_append:"replace-content"==a?g=ai_front.insertion_replace_content:"replace-element"==a&&(g=ai_front.insertion_replace_element);c.innerText=g+" "+e+" ("+b.tagName.toLowerCase()+selector_string+")"}c=document.createRange().createContextualFragment(d.innerHTML);"before"==a?b.parentNode.insertBefore(c,b):"after"==a?b.parentNode.insertBefore(c,b.nextSibling):"prepend"==
+a?b.insertBefore(c,b.firstChild):"append"==a?b.insertBefore(c,null):"replace-content"==a?b.innerHTML=d.innerHTML:"replace-element"==a&&(b.parentNode.insertBefore(c,b),b.parentNode.removeChild(b))})}
+function ai_insert_code(a){function e(a,b){return null==a?!1:a.classList?a.classList.contains(b):-1<(" "+a.className+" ").indexOf(" "+b+" ")}function h(a,b){null!=a&&(a.classList?a.classList.add(b):a.className+=" "+b)}function f(a,b){null!=a&&(a.classList?a.classList.remove(b):a.className=a.className.replace(new RegExp("(^|\\b)"+b.split(" ").join("|")+"(\\b|$)","gi")," "))}var b=e(a,"no-visibility-check")?!0:!!(a.offsetWidth||a.offsetHeight||a.getClientRects().length);a.getAttribute("data-block");
+if(b){b=a.getAttribute("data-code");var k=a.getAttribute("data-insertion"),d=a.getAttribute("data-selector");null!=b&&(null!=k&&null!=d?document.querySelectorAll(d).length&&(ai_insert(k,d,b64d(b)),f(a,"ai-viewports")):(b=document.createRange().createContextualFragment(b64d(b)),a.parentNode.insertBefore(b,a.nextSibling),f(a,"ai-viewports")));a=a.getElementsByClassName("ai-check-block");"undefined"!=typeof a[0]&&a[0].parentNode.removeChild(a[0])}else b=a.previousElementSibling,e(b,"ai-debug-bar")&&
+e(b,"ai-debug-script")&&(f(b,"ai-debug-script"),h(b,"ai-debug-viewport-invisible")),f(a,"ai-viewports")}function b64e(a){return btoa(encodeURIComponent(a).replace(/%([0-9A-F]{2})/g,function(a,h){return String.fromCharCode("0x"+h)}))}function b64d(a){return decodeURIComponent(atob(a).split("").map(function(a){return"%"+("00"+a.charCodeAt(0).toString(16)).slice(-2)}).join(""))};
+</script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/highlight.min.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/javascript.min.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/postmessage.min.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/jquery.jetpack-resize.min.js"></script>
+<link rel="https://api.w.org/" href="https://blog.logrocket.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.logrocket.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.logrocket.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="https://wp.me/paUW9B-5H">
+<link rel="alternate" type="application/json+oembed" href="https://blog.logrocket.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://blog.logrocket.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F&amp;format=xml">
+<script>
+if (typeof jQuery == 'undefined') {
+var script = document.createElement("SCRIPT");
+script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js';
+script.type = 'text/javascript';
+script.onload = function() {
+var $ = window.jQuery;
+// LogRocket.captureMessage('jQuery failed to load and triggered catch');
+};
+document.getElementsByTagName("head")[0].appendChild(script);
+}</script>
+<meta name="theme-color" content="#764abc">
+<link rel="stylesheet" href="./LocalStorage in JavaScript - LogRocket Blog_files/tomorrow.min.css" media="all" onload="if(media!=&#39;all&#39;)media=&#39;all&#39;">
+
+<!--<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-WBR4BQM':true});</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79250541-1', 'auto');
+  ga('require', 'GTM-WBR4BQM');
+
+</script>-->
+
+<!--<script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+<script>window.LogRocket && window.LogRocket.init('w9xjrq/testing-project');</script>-->
+
+    <script>
+    window.Raven && window.Raven.config('https://98e0ea7c6f2e492d94439ad5aaea48dd@e.logrocket.com/4').install()
+    </script>
+    <script type="text/javascript">
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+        }
+        var LOCAL = false;
+        function transformURL(
+            baseURL,
+            rootDomain,
+            path
+        ) {
+            if (LOCAL) {
+                return baseURL
+                    .replace(rootDomain, 'localhost:8080' + path)
+                    .replace('https://', 'http://');
+            } else {
+                return baseURL.replace(rootDomain, 'log.logicanalytics.io' + path);
+            }
+        }
+        function setWithDescriptor(descriptor, arg) {
+            var transformedURL = arg;
+            if (transformedURL.indexOf('cdn.heapanalytics.com') !== -1) {
+              return descriptor.set.call(this, transformURL(transformedURL, 'cdn.heapanalytics.com', ''))
+            }
+            if (transformedURL.indexOf('marketo.net') !== -1) {
+              return descriptor.set.call(this, transformURL(transformedURL, 'munchkin.marketo.net', '/munchkin'))
+            }
+            if (transformedURL.indexOf('api.segment.io') !== -1) {
+              return descriptor.set.call(this, transformURL(transformedURL, 'api.segment.io', '/seg-api'))
+            }
+            if (transformedURL.indexOf('heapanalytics.com') !== -1) {
+              return descriptor.set.call(this, transformURL(transformedURL, 'heapanalytics.com', '/heap'))
+            }
+            return descriptor.set.call(this, arg);
+        }
+        /* HEAP */
+        const scriptDescriptor = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
+        Object.defineProperty(HTMLScriptElement.prototype, 'src', {
+          set: function set(arg) {
+            return setWithDescriptor.call(this, scriptDescriptor, arg);
+          },
+          get: function get() {
+            return scriptDescriptor.get.call(this);
+          },
+        });
+        const imageDescriptor = Object.getOwnPropertyDescriptor(Image.prototype, 'src');
+        if (imageDescriptor) {
+            Object.defineProperty(Image.prototype, 'src', {
+              set: function set(arg) {
+                return setWithDescriptor.call(this, imageDescriptor, arg);
+              },
+              get: function get() {
+                return imageDescriptor.get.call(this);
+              },
+            });
+        }
+      /* Segment */
+      var _XHR = XMLHttpRequest;
+      // eslint-disable-next-line no-native-reassign
+      XMLHttpRequest = function XMLHttpRequest(mozAnon, mozSystem) {
+        var xhrObject = new _XHR(mozAnon, mozSystem);
+        var origOpen = xhrObject.open.bind(xhrObject);
+        xhrObject.open = function open(method, url) {
+            if (url.indexOf('api.segment.io') !== -1) {
+                origOpen(method, url.replace('api.segment.io', 'log.logicanalytics.io'));
+                return;
+            }
+            if (url.indexOf('740-LKM-263.mktoresp.com') !== -1) {
+                var url2 = url
+                    .replace('740-LKM-263.mktoresp.com', 'log.logicanalytics.io/mkto')
+                    .replace(/visitWebPage/g, 'GMdE84QYc83vZT7')
+                    .replace(/clickLink/g, '746qbsNH3kGcEr4')
+                    .replace(/associateLead/g, 'CUaGm438zqN32Qi');
+                origOpen(method, url2);
+                return;
+            }
+            origOpen(method, url);
+        };
+        return xhrObject;
+      };
+      // this allows "instanceof XMLHttpRequest" to work
+      XMLHttpRequest.prototype = _XHR.prototype;
+      // Persist the static variables.
+      ['UNSENT', 'OPENED', 'HEADERS_RECEIVED', 'LOADING', 'DONE'].forEach(function (variable) {
+        XMLHttpRequest[variable] = _XHR[variable];
+      });
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"log.logicanalytics.io/a.js/v1/"+t+"/a.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+    analytics.load("hn3yvJCms37nkkjrwDQ08PuKJKydGtAZ");
+    var utmMedium = getQueryVariable('utm_medium');
+    if (utmMedium) {
+        var queryString = window.location.search.substring(1);
+        window.location.hash = encodeURI(queryString);
+    }
+    analytics.page();
+    }}();
+    </script>
+
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nyazy');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+<link rel="dns-prefetch" href="https://widgets.wp.com/">
+<link rel="dns-prefetch" href="https://jetpack.wordpress.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://public-api.wordpress.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="dns-prefetch" href="https://c0.wp.com/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style>			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		<link rel="icon" href="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/06/cropped-cropped-favicon-196x196.png?fit=32%2C32&amp;ssl=1" sizes="32x32">
+<link rel="icon" href="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/06/cropped-cropped-favicon-196x196.png?fit=192%2C192&amp;ssl=1" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/06/cropped-cropped-favicon-196x196.png?fit=180%2C180&amp;ssl=1">
+<meta name="msapplication-TileImage" content="https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/06/cropped-cropped-favicon-196x196.png?fit=270%2C270&amp;ssl=1">
+			<link rel="stylesheet" type="text/css" id="wp-custom-css" href="./LocalStorage in JavaScript - LogRocket Blog_files/saved_resource(3)">
+		<style id="kirki-inline-styles">.btn-simple{background-color:#764abc;border-color:#764abc;}.prevnextlinks a, .article-post a, .post .btn.follow, .post .post-top-meta .author-description a, article.page a, .alertbar a{color:#764abc;}.post .btn.follow, .alertbar input[type="submit"]{border-color:#764abc;}blockquote{border-color:#764abc;}.entry-content input[type=submit], .alertbar input[type="submit"]{background-color:#764abc;border-color:#764abc;}p.sharecolour{color:#999999;}.shareitnow ul li a svg, .shareitnow a{fill:#b3b3b3;}.shareitnow li a{color:#b3b3b3;border-color:#d2d2d2;}#comments a{color:#764abc;}.comment-form input.submit{background-color:#764abc;border-color:#764abc;}footer.footer a{color:#764abc;}.carousel-excerpt .fontlight,body{font-family:"PT Sans", Helvetica, Arial, sans-serif;font-size:15px;font-weight:400;line-height:1.5;color:#666666;}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:"PT Sans", Helvetica, Arial, sans-serif;font-weight:700;color:#111111;}.carousel-excerpt .title{font-family:"PT Sans", Helvetica, Arial, sans-serif;font-size:30px;font-weight:700;text-transform:none;color:#ffffff;}.carousel-excerpt .fontlight{font-size:18px;font-weight:400;color:#ffffff;}.mediumnavigation .navbar-brand{font-family:Merriweather, Georgia, serif;font-size:26px;font-weight:700;}.navbar-toggleable-md .navbar-collapse{font-family:"PT Sans", Helvetica, Arial, sans-serif;font-weight:400;}.article-post{font-family:Merriweather, Georgia, serif;font-weight:400;line-height:1.8;color:#222222;}.mediumnavigation, .dropdown-menu, .dropdown-item{background-color:#ffffff;}.mediumnavigation, .mediumnavigation a, .navbar-light .navbar-nav .nav-link{color:#764abc;}.navbar-light .navbar-brand{color:#111111;}.navbar-light .navbar-brand:hover{color:#02b875;}.customarea .btn.follow{border-color:#ffffff;color:#ffffff;}@media (max-width: 767px){.navbar-collapse{background-color:#ffffff;}}@font-face{font-display:swap;font-family:'PT Sans';font-style:normal;font-weight:400;src:local('PT Sans'), local('PTSans-Regular'), url(//blog.logrocket.com/wp-content/uploads/2019/07/jizaRExUiTo99u79P0Y.woff) format('woff');}@font-face{font-display:swap;font-family:'PT Sans';font-style:normal;font-weight:700;src:local('PT Sans Bold'), local('PTSans-Bold'), url(//blog.logrocket.com/wp-content/uploads/2019/07/jizfRExUiTo99u79B_mh4Oo.woff) format('woff');}@font-face{font-display:swap;font-family:'Merriweather';font-style:normal;font-weight:400;src:local('Merriweather Regular'), local('Merriweather-Regular'), url(//blog.logrocket.com/wp-content/uploads/2019/07/u-440qyriQwlOrhSvowK_l5OeA.woff) format('woff');}@font-face{font-display:swap;font-family:'Merriweather';font-style:normal;font-weight:700;src:local('Merriweather Bold'), local('Merriweather-Bold'), url(//blog.logrocket.com/wp-content/uploads/2019/07/u-4n0qyriQwlOrhSvowK_l52xwNpXA.woff) format('woff');}</style><link rel="stylesheet" type="text/css" href="./LocalStorage in JavaScript - LogRocket Blog_files/prettify.css"><script src="./LocalStorage in JavaScript - LogRocket Blog_files/f(1).txt"></script><script src="./LocalStorage in JavaScript - LogRocket Blog_files/f(2).txt"></script></head>
+
+<body class="post-template-default single single-post postid-353 single-format-standard">
+
+<style>
+    </style>
+
+
+<header class="navbar-light bg-white fixed-top mediumnavigation nav-up" style="top: 0px;">
+
+    <div class="container">
+
+
+
+        <div class="navarea">
+
+<div class="nav-left">
+
+  <a class="blog-logo" href="https://logrocket.com/" rel="home"><img class="lozad" src="./LocalStorage in JavaScript - LogRocket Blog_files/logo-frontend-monitoring.png" alt="LogRocket Blog"></a>
+
+<nav class="menu-container">
+
+        <div class="menu-primary-container"><ul id="menu-primary" class=""><li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6 nav-item"><a href="https://blog.logrocket.com/" class="nav-link">Blog</a></li></ul></div></nav>
+
+</div>
+
+<div class="nav-right">
+
+  <div class="menu-container">
+    <div id="right-hand-nav" class="menu-right-hand-menu-container"><ul id="menu-right-hand-menu" class=""><li id="menu-item-877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-877"><a href="https://app.logrocket.com/">Sign In</a></li>
+<li id="menu-item-878" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-878"><a href="https://logrocket.com/signup/" class="signup">Free Trial</a></li>
+</ul></div>  </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+        <!-- Begin site-content
+		================================================== -->
+        <div class="site-content" style="margin-top: 55px;">
+
+
+<div class="container"> 
+    <div class="row">         
+        <div class=" col-md-2 ">           
+            <div class="share" style="display: block;">
+                
+                <div class="sidebarapplause">
+                                </div>
+                
+                				<p class="sharecolour">
+					Share				</p>
+                
+<ul class="shareitnow"><li>
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=LocalStorage%20in%20JavaScript&amp;url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F">
+        <i class="fa fa-twitter"></i>
+        </a>
+    </li><li>
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F">
+        <i class="fa fa-facebook"></i>
+        </a>
+    </li><li>
+        <a target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F">
+        <i class="fa fa-google"></i>
+        </a>
+    </li><li>
+        <a target="_blank" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F&amp;media=&amp;description=LocalStorage%20in%20JavaScript">
+        <i class="fa fa-pinterest"></i>
+        </a>
+    </li><li>
+        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F&amp;title=LocalStorage%20in%20JavaScript">
+        <i class="fa fa-linkedin"></i>
+        </a>
+    </li></ul>                		        
+                
+                                <div class="sep"></div>
+                <div class="hidden-xs-down">      
+
+                    <p>
+                        Reply                    </p>
+                    <ul>
+                        <li>
+                        <a class="smoothscroll" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/#comments">0<br>
+                        <svg class="svgIcon-use" width="29" height="29" viewBox="0 0 29 29"><path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z"></path></svg>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                            </div>			                                
+        </div>
+        
+                    			                <div class="col-md-8 flex-first flex-md-unordered post-353 post type-post status-publish format-standard hentry category-uncategorized" id="post-353"> 
+                    <div class="mainheading">
+                       
+                                                <!-- Begin Author box -->                                     
+                        <div class="row post-top-meta hidden-md-down"> 
+                            <div class="col-md-2 col-xs-12"> 
+                                <a href="https://blog.logrocket.com/author/codepanda/">
+                                    <img alt="" src="./LocalStorage in JavaScript - LogRocket Blog_files/nosa.jpg" class="avatar avatar-72 photo jetpack-lazy-image" height="72" width="72" data-lazy-src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/nosa.jpg?resize=150%2C150&amp;ssl=1&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img alt='' src='https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/nosa.jpg?resize=150%2C150&ssl=1' class='avatar avatar-72 photo' height='72' width='72' /></noscript>                                </a>
+                            </div>                                         
+                            <div class="col-md-10 col-xs-12"> 
+                                <a class="text-capitalize link-dark" href="https://blog.logrocket.com/author/codepanda/">
+                                Nosa Obaseki <span class="btn follow">Follow</span></a>
+                                <span class="author-description d-block">Front-end Dev currently building amazing products @theflutterwave <img draggable="false" class="emoji" alt="🐼" src="./LocalStorage in JavaScript - LogRocket Blog_files/1f43c.svg"><img draggable="false" class="emoji" alt="🇳🇬" src="./LocalStorage in JavaScript - LogRocket Blog_files/1f1f3-1f1ec.svg"></span> 
+                            </div>                                         
+                        </div>
+                                                 
+                                                
+                        <h1 class="posttitle">LocalStorage in JavaScript</h1>
+					    <h2 class="post-subtitle"></h2>
+
+                        <p>
+                                                        <span class="post-date"><time class="post-date">
+                            July 17, 2018                            </time></span>
+                                                        
+                                                        <span class="dot"></span>
+                            <span class="readingtime">2 min read</span>
+						    <span class="wordcount">709</span>
+
+                                                    </p> 
+                    </div>
+                    
+                                      <article class="article-post">
+                                                <h2>The complete guide to using localStorage in JavaScript apps</h2>
+<figure><img src="./LocalStorage in JavaScript - LogRocket Blog_files/1_krty-B-4mEibZa7er8Uz_A.jpeg" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i2.wp.com/storage.googleapis.com/blog-images-backup/1*krty-B-4mEibZa7er8Uz_A.jpeg?ssl=1" data-recalc-dims="1" /></noscript></figure>
+<p>LocalStorage is a type of web storage that allows Javascript websites and apps to store and access data right in the browser with no expiration date. This means the data stored in the browser will persist even after the browser window has been closed.</p>
+<figure><a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/1_GPjaPKNNUYHU8EsA3Z0JGA.png" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i2.wp.com/storage.googleapis.com/blog-images-backup/1*GPjaPKNNUYHU8EsA3Z0JGA.png?ssl=1" data-recalc-dims="1" /></noscript></a></figure>
+<h2>LocalStorage in JavaScript: How&nbsp;to</h2>
+<p>To use localStorage in your web applications, there are five methods to choose from:</p>
+<ol>
+<li><strong>setItem():</strong> Add key and value to localStorage</li>
+<li><strong>getItem():</strong> Retrieve a value by the key from localStorage</li>
+<li><strong>removeItem():</strong> Remove an item by key from localStorage</li>
+<li><strong>clear():</strong> Clear all localStorage</li>
+<li><strong>key():</strong> Passed a number to retrieve nth key of a localStorage</li>
+</ol>
+<h3>setItem()</h3>
+<p>This method just as the name implies allows you to store values in the localStorage object.</p>
+<p>It takes two parameters, a key and a value. The key can be referenced later to fetch the value attached to it.</p>
+<pre class="prettyprinted hljs coffeescript" style=""><span class="pln"><span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">setItem</span><span class="pun">(</span><span class="str"><span class="hljs-string">'name'</span></span><span class="pun">,</span><span class="pln"> </span><span class="str"><span class="hljs-string">'Obaseki Nosa'</span></span><span class="pun">);</span></pre>
+<p>Where <code class=" prettyprinted" style=""><span class="pln">name</span></code> is the key and <code class=" prettyprinted" style=""><span class="typ">Obaseki</span><span class="pln"> </span><span class="typ">Nosa</span></code> is the value. Also note that localStorage can only store strings.</p>
+<p>To store arrays or objects you would have to convert them to strings.</p>
+<p>To do this we use the <code class=" prettyprinted" style=""><span class="pln">JSON</span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">()</span></code> method before passing to <code class=" prettyprinted" style=""><span class="pln">setItem</span><span class="pun">()</span></code>.</p>
+<pre class="prettyprinted hljs javascript" style=""><span class="kwd"><span class="hljs-keyword">const</span></span><span class="pln"> person </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    <span class="hljs-attr">name</span></span><span class="pun">:</span><span class="pln"> </span><span class="str"><span class="hljs-string">"Obaseki Nosa"</span></span><span class="pun">,</span><span class="pln">
+    <span class="hljs-attr">location</span></span><span class="pun">:</span><span class="pln"> </span><span class="str"><span class="hljs-string">"Lagos"</span></span><span class="pun">,</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+<span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">setItem</span><span class="pun">(</span><span class="str"><span class="hljs-string">'user'</span></span><span class="pun">,</span><span class="pln"> <span class="hljs-built_in">JSON</span></span><span class="pun">.</span><span class="pln">stringify</span><span class="pun">(</span><span class="pln">person</span><span class="pun">));</span></pre>
+<h3>getItem()</h3>
+<p>The getItem() method allows you to access the data stored in the browser’s localStorage object.</p>
+<p>It accepts only one parameter which is the <code class=" prettyprinted" style=""><span class="pln">key</span></code> and returns the <code class=" prettyprinted" style=""><span class="kwd">value</span></code> as a string.</p>
+<p>To retrieve the user key stored above:</p>
+<pre class="prettyprinted hljs coffeescript" style=""><span class="pln"><span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">getItem</span><span class="pun">(</span><span class="str"><span class="hljs-string">'user'</span></span><span class="pun">);</span></pre>
+<p>This returns a string with value as;</p>
+<pre class="prettyprinted hljs makefile" style=""><span class="pun"><span class="hljs-section">“{“</span></span><span class="pln"><span class="hljs-section">name</span></span><span class="pun"><span class="hljs-section">”:”</span></span><span class="typ"><span class="hljs-section">Obaseki</span></span><span class="pln"><span class="hljs-section"> </span></span><span class="typ"><span class="hljs-section">Nosa</span></span><span class="pun"><span class="hljs-section">”,”</span></span><span class="pln"><span class="hljs-section">location</span></span><span class="pun"><span class="hljs-section">”:”</span></span><span class="typ"><span class="hljs-section">Lagos</span></span><span class="pun"><span class="hljs-section">”}”</span></span></pre>
+<p>To use this value, you would have convert it back to an object.</p>
+<p>To do this, we make use of <code class=" prettyprinted" style=""><span class="pln">JSON</span><span class="pun">.</span><span class="pln">parse</span><span class="pun">()</span></code> method which converts a JSON string into a Javascript Object.</p><div class="code-block code-block-3" style="margin: 8px 0; clear: both;">
+<script src="./LocalStorage in JavaScript - LogRocket Blog_files/TweenMax.min.js"></script>
+<script src="./LocalStorage in JavaScript - LogRocket Blog_files/TimelineMax.min.js"></script>
+<a href="https://logrocket.com/signup" class="cro1">
+<div class="appear" style="width: 100%; float: left; position: relative; height: 250px; margin-bottom: 40px;">
+<div id="banner-cro1" class="cta-2">
+  <img id="photo" class="skip-lazy" src="./LocalStorage in JavaScript - LogRocket Blog_files/developer_hero.png" style="left: 1000px; top: -345px;" width="400" height="226"><noscript><img id="photo" class="skip-lazy" src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/05/developer_hero.png?ssl=1" data-recalc-dims="1"/></noscript>
+  <h1 id="hed" style="transform: matrix(0, 0, 0, 0, 0, 0);"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/LR-Logo-Small-1.png" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/LR-Logo-Small-1.png?ssl=1" data-recalc-dims="1"></noscript></h1>
+  <h2 id="txt1" style="top: 35px; opacity: 0;">Front-end Application Monitoring</h2>
+  <h2 class="txt2" style="top: 0px; opacity: 0;"><span class="cta-icon"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/identify-icon.png" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/05/identify-icon.png?ssl=1" data-recalc-dims="1"></noscript></span> Identify  <span class="cta-icon"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/fix-icon.png" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/05/fix-icon.png?ssl=1" data-recalc-dims="1"></noscript></span> Fix  <span class="cta-icon"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/track-icon.png" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/05/track-icon.png?ssl=1" data-recalc-dims="1"></noscript></span>Track</h2>
+  <h3 id="cta" style="opacity: 0;"><em style="opacity: 0;">Get a Free Trial &gt;</em></h3>
+  <img id="rocket" class="skip-lazy" src="./LocalStorage in JavaScript - LogRocket Blog_files/rocket_flying-vertical.png" style="bottom: -400px; right: -190px;" width="75" height="236"><noscript><img id="rocket" class="skip-lazy" src="https://i2.wp.com/blog.logrocket.com/wp-content/uploads/2019/05/rocket_flying-vertical.png?ssl=1" data-recalc-dims="1"/></noscript>
+</div>
+</div></a>
+<style>.cta-2 button{
+  width:80px;
+  height:30px;
+  margin-top:10px;
+}#banner-cro1{
+  position:absolute;
+  width:900px;
+  height: 250px;
+  border:1px solid grey;
+  overflow:hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}.cta-2 h1,.cta-2 h2,.cta-2 h3{
+  position:absolute;
+  font-weight:400;}.cta-2 h1{
+  font-size:55px;
+  font-weight:200;
+  top:6px;left:24px;
+}#hed img {max-width: 275px;}
+.cta-2 .txt2{
+  color: #000000;
+  top:108px;
+  left: 12px;
+  padding: 8px 20px;
+  text-align: center;
+  font-size:24px;
+  line-height:32px;
+}.cta-2 .txt2 img {max-width: 30px; margin-top: -5px;}
+.cta-2 #txt1{
+  top:65px;
+  left:96px;
+  font-size:16px;
+  color: black;
+}.cta-2 #cta{width:20%;border-radius:20px;
+background:#764abc;
+padding:10px 10px;
+color:white;
+font-size:20px;
+top:140px;
+left:90px;
+text-align:center;
+}.cta-2 #photo{
+  position:absolute;
+  top:55px;
+  left:400px !important;
+  max-width:400px;
+}.cta-2 #rocket{
+  position:absolute;
+  bottom:0px;
+  right:10px !important;
+  max-width:75px;
+}@media all and (max-width: 600px){#banner-cro1{max-width: 100%;}.cta-2 #cta{width:40%;}#rocket {top: 147px;}.cta-2 .txt2 {font-size: 20px;}}</style>
+
+<script>
+var tl = new TimelineLite({delay:.5, paused: true});
+tl.from('#rocket',1.5, {right:'-=200', bottom:'-=400', ease:'Quad.easeOut'},0)
+  .from('#photo',2.5, {top:'-=400', left:'+=600', ease:'Quad.easeOut'},0)
+  .from('#hed', 1, {scale:0, ease:'Back.easeOut'})
+  .from('.txt2', .5, {opacity:0, top:'-=108'})
+  .from('#txt1', 1.5 , {alpha:0, top:'-=30', ease:'Back.easeOut'})
+  .from('#cta', 2, {alpha:0})
+  .from('#cta>em', .5 , {alpha:0});
+tl.add(TweenMax.to('#cta', .5, {'backgroundColor':'#764abc', repeat:1, yoyo:true}));
+tl.timeScale(1.3);
+function pause() {
+  tl.pause();
+}
+var intersectionOptions = {
+  root: null,  // use the viewport
+  rootMargin: '0px',
+  threshold: 1.0
+}
+function intersectionCallback(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio >= 1) {
+      tl.play();
+    } else {
+    }
+  });
+}
+var observer = new IntersectionObserver(intersectionCallback, intersectionOptions);
+var target = document.querySelector('#banner-cro1');
+observer.observe(target);
+</script>
+</div>
+
+<pre class="prettyprinted hljs javascript" style=""><span class="pln"><span class="hljs-built_in">JSON</span></span><span class="pun">.</span><span class="pln">parse</span><span class="pun">(</span><span class="pln"><span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">getItem</span><span class="pun">(</span><span class="str"><span class="hljs-string">'user'</span></span><span class="pun">));</span></pre>
+<h3>removeItem()</h3>
+<p>The removeItem() method when passed a key name, will remove that key from the storage if it exists. If there is no item associated with the given key, this method will do nothing.</p>
+<pre class="prettyprinted hljs coffeescript" style=""><span class="pln"><span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">removeItem</span><span class="pun">(</span><span class="str"><span class="hljs-string">'name'</span></span><span class="pun">);</span></pre>
+<h3>clear()</h3>
+<p>This method, when invoked clears the entire storage of all records for that domain. It does not receive any parameters.</p>
+<pre class="prettyprinted hljs css" style=""><span class="pln"><span class="hljs-selector-tag">window</span></span><span class="pun"><span class="hljs-selector-class">.</span></span><span class="pln"><span class="hljs-selector-class">localStorage</span></span><span class="pun"><span class="hljs-selector-class">.</span></span><span class="pln"><span class="hljs-selector-class">clear</span></span><span class="pun">();</span></pre>
+<h3>key()</h3>
+<p>The key() method comes in handy in situations where you need to loop through keys and allows you pass a number or index to local storage to retrieve the name of the key.</p>
+<pre class="prettyprinted hljs javascript" style=""><span class="kwd"><span class="hljs-keyword">var</span></span><span class="pln"> </span><span class="typ">KeyName</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> <span class="hljs-built_in">window</span></span><span class="pun">.</span><span class="pln">localStorage</span><span class="pun">.</span><span class="pln">key</span><span class="pun">(</span><span class="pln">index</span><span class="pun">);</span></pre>
+<h3>LocalStorage JavaScript browser&nbsp;support</h3>
+<p>LocalStorage as a type of web storage is an HTML5 specification. It is supported by major browsers including IE8. To be sure the browser supports localStorage, you can check using the following snippet:</p>
+<pre class="prettyprinted hljs cs" style=""><span class="kwd"><span class="hljs-keyword">if</span></span><span class="pln"> </span><span class="pun">(</span><span class="kwd"><span class="hljs-keyword">typeof</span></span><span class="pun">(</span><span class="typ">Storage</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!==</span><span class="pln"> </span><span class="str"><span class="hljs-string">"undefined"</span></span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com"><span class="hljs-comment">// Code for localStorage</span></span><span class="pln">
+    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd"><span class="hljs-keyword">else</span></span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com"><span class="hljs-comment">// No web storage Support.</span></span><span class="pln">
+</span><span class="pun">}</span></pre>
+<h2>LocalStorage JavaScript limitations</h2>
+<p>As easy as it is to use localStorage, it is also easy to misuse it. The following are limitations and also ways to NOT use localStorage:</p>
+<ul>
+<li>Do not store sensitive user information in localStorage</li>
+<li>It is not a substitute for a server based database as information is only stored on the browser</li>
+<li>LocalStorage is limited to 5MB across all major browsers</li>
+<li>LocalStorage is quite insecure as it has no form of data protection and can be accessed by any code on your web page</li>
+<li>LocalStorage is synchronous. Meaning each operation called would only execute one after the other</li>
+</ul>
+<p>With these, we have been armed with the power of localStorage in our web applications.</p>
+<hr>
+<h2>Plug: <a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup">LogRocket</a>, a DVR for web&nbsp;apps</h2>
+<figure class="wp-caption"><a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup"><img src="./LocalStorage in JavaScript - LogRocket Blog_files/1_s_rMyo6NbrAsP-XtvBaXFg.png" data-height="2004" data-width="3552" data-recalc-dims="1" class="jetpack-lazy-image jetpack-lazy-image--handled" data-lazy-loaded="1"><noscript><img src="https://i0.wp.com/storage.googleapis.com/blog-images-backup/1*s_rMyo6NbrAsP-XtvBaXFg.png?resize=3552%2C2004&#038;ssl=1" data-height="2004" data-width="3552" data-recalc-dims="1" /></noscript></a><figcaption class="wp-caption-text"><a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup">https://logrocket.com/signup/</a></figcaption></figure>
+<p><a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup">LogRocket</a> is a frontend logging tool that lets you replay problems as if they happened in your own browser. Instead of guessing why errors happen, or asking users for screenshots and log dumps, LogRocket lets you replay the session to quickly understand what went wrong. It works perfectly with any app, regardless of framework, and has plugins to log additional context from Redux, Vuex, and @ngrx/store.</p>
+<p>In addition to logging Redux actions and state, LogRocket records console logs, JavaScript errors, stacktraces, network requests/responses with headers + bodies, browser metadata, and custom logs. It also instruments the DOM to record the HTML and CSS on the page, recreating pixel-perfect videos of even the most complex single page apps.</p>
+<p><a href="https://logrocket.com/signup/" target="_blank" rel="noopener noreferrer" class="signup">Try it for free.</a></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-353" class="share-twitter sd-button share-icon" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-353" class="share-linkedin sd-button share-icon" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-353" class="share-facebook sd-button share-icon" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div>                        <div class="clearfix"></div>
+                                                <div class="clearfix"></div>
+                    </article>
+                            
+                                             <!-- Begin Author box -->                                     
+                        <div class="row post-top-meta hidden-lg-up"> 
+                            <div class="col-md-2 col-xs-4"> 
+                                <img alt="" src="./LocalStorage in JavaScript - LogRocket Blog_files/nosa.jpg" class="avatar avatar-72 photo jetpack-lazy-image jetpack-lazy-image--handled" height="72" width="72" data-lazy-loaded="1"><noscript><img alt='' src='https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/nosa.jpg?resize=150%2C150&ssl=1' class='avatar avatar-72 photo' height='72' width='72' /></noscript>                            </div>                                         
+                            <div class="col-md-10 col-xs-8"> 
+                                <a class="text-capitalize link-dark" href="https://blog.logrocket.com/author/codepanda/">
+                                Nosa Obaseki <span class="btn follow">Follow</span></a>
+                                <span class="author-description d-block">Front-end Dev currently building amazing products @theflutterwave <img draggable="false" class="emoji" alt="🐼" src="./LocalStorage in JavaScript - LogRocket Blog_files/1f43c.svg"><img draggable="false" class="emoji" alt="🇳🇬" src="./LocalStorage in JavaScript - LogRocket Blog_files/1f1f3-1f1ec.svg"></span> 
+                            </div>                                         
+                        </div>
+                                         
+                    <div class="after-post-tags">
+                                                    <ul class="post-categories">
+	<li><a href="https://blog.logrocket.com/category/uncategorized/" rel="category tag">Uncategorized</a></li></ul>                                                                            <ul class="post-categories aretags">
+                                                        </ul>
+                                            </div>
+                    
+                  
+                    <div class="row mb-5 prevnextlinks justify-content-center align-items-center"> 
+                       <div class="col-md-6 col-xs-12 rightborder pl-0"><div class="thepostlink">« <a href="https://blog.logrocket.com/a-guide-to-react-onclick-event-handlers-d411943b14dd/" rel="prev">A guide to React onClick event handlers</a></div></div>
+                       <div class="col-md-6 col-xs-12 text-right pr-0"><div class="thepostlink"><a href="https://blog.logrocket.com/building-a-progressive-web-app-pwa-no-react-no-angular-no-vue-aefdded3b5e/" rel="next">Building a progressive web app (PWA): No React, no Angular, no&nbsp;Vue</a> »</div></div>
+                    </div>
+                    
+                </div>
+        
+                    
+         
+        
+        
+    </div>                 
+</div>             
+          
+<div class="hideshare"></div>
+
+    <div class="graybg"> 
+        <div class="container"> 
+                <div class="row justify-content-center listrecent listrelated">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+            
+<div class="card post height262">
+<a class="thumbimage" href="https://blog.logrocket.com/accessing-properties-globally-in-vue-js-with-prototypes/" style="background-image:url(https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/08/accessing-properties-globally-vue-js-prototypes.jpeg?fit=730%2C489&amp;ssl=1);"></a><div class="card-block">
+    <h2 class="card-title">
+        <a href="https://blog.logrocket.com/accessing-properties-globally-in-vue-js-with-prototypes/">Accessing properties globally in Vue.js with prototypes</a>
+    </h2>
+            <div class="metafooter">
+            <div class="wrapfooter">
+                <span class="meta-footer-thumb">
+                    <a href="https://blog.logrocket.com/author/nwoselotanna/">
+                    <img alt="" src="./LocalStorage in JavaScript - LogRocket Blog_files/nwoselotanna.jpg" class="avatar avatar-40 photo jetpack-lazy-image jetpack-lazy-image--handled" height="40" width="40" data-lazy-loaded="1"><noscript><img alt='' src='https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/nwoselotanna.jpg?resize=150%2C150&ssl=1' class='avatar avatar-40 photo' height='40' width='40' /></noscript>                    </a>
+                </span>
+                <span class="author-meta">
+                    <span class="post-name">
+                    <a href="https://blog.logrocket.com/author/nwoselotanna/">Nwose Lotanna</a></span><br>
+                    <span class="post-date">Aug 21, 2019</span>
+                    <span class="dot"></span>
+                    <span class="readingtime">4 min read</span>
+                </span>
+                <span class="post-read-more">
+                    <a href="https://blog.logrocket.com/accessing-properties-globally-in-vue-js-with-prototypes/" title="">
+                    <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
+                        <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                </span>            </div>
+        </div>
+    </div>
+</div>
+        </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+            
+<div class="card post height262">
+<a class="thumbimage" href="https://blog.logrocket.com/tracking-action-status-in-redux/" style="background-image:url(https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/08/methods-tracking-action-status-redux.jpeg?fit=730%2C456&amp;ssl=1);"></a><div class="card-block">
+    <h2 class="card-title">
+        <a href="https://blog.logrocket.com/tracking-action-status-in-redux/">Methods for tracking action status in Redux</a>
+    </h2>
+            <div class="metafooter">
+            <div class="wrapfooter">
+                <span class="meta-footer-thumb">
+                    <a href="https://blog.logrocket.com/author/maciejcieslar/">
+                    <img alt="" src="./LocalStorage in JavaScript - LogRocket Blog_files/maciejcieslar.jpg" class="avatar avatar-40 photo jetpack-lazy-image jetpack-lazy-image--handled" height="40" width="40" data-lazy-loaded="1"><noscript><img alt='' src='https://i2.wp.com/blog.logrocket.com/wp-content/uploads/2019/04/maciejcieslar.jpg?resize=150%2C150&ssl=1' class='avatar avatar-40 photo' height='40' width='40' /></noscript>                    </a>
+                </span>
+                <span class="author-meta">
+                    <span class="post-name">
+                    <a href="https://blog.logrocket.com/author/maciejcieslar/">Maciej Cieslar</a></span><br>
+                    <span class="post-date">Aug 21, 2019</span>
+                    <span class="dot"></span>
+                    <span class="readingtime">4 min read</span>
+                </span>
+                <span class="post-read-more">
+                    <a href="https://blog.logrocket.com/tracking-action-status-in-redux/" title="">
+                    <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
+                        <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                </span>            </div>
+        </div>
+    </div>
+</div>
+        </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+            
+<div class="card post height262">
+<a class="thumbimage" href="https://blog.logrocket.com/docker-for-front-end-developers/" style="background-image:url(https://i0.wp.com/blog.logrocket.com/wp-content/uploads/2019/08/docker-for-front-end-developers.jpeg?fit=730%2C486&amp;ssl=1);"></a><div class="card-block">
+    <h2 class="card-title">
+        <a href="https://blog.logrocket.com/docker-for-front-end-developers/">Docker for front-end developers</a>
+    </h2>
+            <div class="metafooter">
+            <div class="wrapfooter">
+                <span class="meta-footer-thumb">
+                    <a href="https://blog.logrocket.com/author/emanuelsuriano/">
+                    <img alt="" src="./LocalStorage in JavaScript - LogRocket Blog_files/emanuel-suriano.jpeg" class="avatar avatar-40 photo jetpack-lazy-image jetpack-lazy-image--handled" height="40" width="40" data-lazy-loaded="1"><noscript><img alt='' src='https://i2.wp.com/blog.logrocket.com/wp-content/uploads/2019/08/emanuel-suriano.jpeg?resize=150%2C150&ssl=1' class='avatar avatar-40 photo' height='40' width='40' /></noscript>                    </a>
+                </span>
+                <span class="author-meta">
+                    <span class="post-name">
+                    <a href="https://blog.logrocket.com/author/emanuelsuriano/">Emanuel Suriano</a></span><br>
+                    <span class="post-date">Aug 20, 2019</span>
+                    <span class="dot"></span>
+                    <span class="readingtime">5 min read</span>
+                </span>
+                <span class="post-read-more">
+                    <a href="https://blog.logrocket.com/docker-for-front-end-developers/" title="">
+                    <svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25">
+                        <path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
+                    </svg>
+                    </a>
+                </span>            </div>
+        </div>
+    </div>
+</div>
+        </div>
+            </div>
+    <div class="clearfix"></div>
+                
+<div class="row justify-content-center">
+<div class="col-md-8">
+<div id="comments" class="comments-area">
+
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="./LocalStorage in JavaScript - LogRocket Blog_files/saved_resource(4).html" style="width: 100%; height: 58px; border: 0px;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups" scrolling="no"></iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							<input id="ak_js" name="ak_js" type="hidden" value="1566474448085"></form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="">
+
+		
+</div><!-- #comments -->
+</div>
+</div>        </div>                 
+    </div>
+
+    <div class="alertbar" style="display: block;"> 
+        <div class="container text-center"> 
+                    </div>
+    </div>
+
+</div><div class="code-block code-block-13" style="margin: 8px 0px; clear: both; opacity: 1;">
+<div class="cro-8"><div class="cro8-wrap"><div class="cro8-content-right"><div class="cro8-copy"><h4>Stop Guessing Why Bugs Happen. <span style="color: #764abc;">Try LogRocket for Free.</span></h4></div><div class="cro8-cta"><a href="https://logrocket.com/signup/" class="signup"><button class="cro8-button">Get Started</button></a><span class="close" style="font-weight: 100;">X</span></div></div></div></div>
+
+<style>.code-block-13{opacity:0;margin: 0 !important; position: fixed; width: 100%; bottom: 0; left: 0; background: #ffffff;-webkit-box-shadow: 0px -11px 10px -5px rgba(213,213,213,0.8);
+-moz-box-shadow: 0px -11px 10px -5px rgba(213,213,213,0.8);
+box-shadow: 0px -11px 10px -5px rgba(213,213,213,0.8);} 
+.cro8-wrap{display: block;
+    margin: 0 auto;
+    width: 65%;}
+.cro8-image-right {width:10%; float:left;padding-top:5px;}
+.cro8-content-right{width:100%;float:left;} 
+.cro8-content-right .cro8-copy {float:left; padding-top:15px; padding-bottom:10px; margin-left:2.4%;} 
+.cro8-content-right .cro8-copy h4 {margin-bottom: 0px;}
+.cro8-cta {width: 22%; float: left; margin-left:4%;}
+.cro8-button {width: 130px;float: left;display: block;
+margin: 5px auto 0px auto;padding: 7px 15px;
+    background-image: linear-gradient(to bottom, #90bc4a, #57bc4a);
+    color: #ffffff;
+    font-size: 16px; font-family: "PT Sans", Helvetica, Arial, sans-serif;} 
+.code-block-13 h4, .code-block-13 p {width: 100%;} 
+.close {float: left;
+    margin-top: 20px;
+    margin-left: 60px;font-size:15px; color: #c8c8c8;}
+    @media all and (max-width: 600px){
+    .cro8-cta {width: 100%; margin-bottom: 15px;}
+    .close {margin-left: 35px;}
+    }
+    
+    </style>
+
+<script>  jQuery(document).ready(function(){
+      jQuery('.code-block-13').hide();
+      setTimeout(
+        function()
+        {
+  jQuery('.code-block-13').css("opacity","1");
+  jQuery('.code-block-13').slideDown("slow");
+        }, 30000);
+      jQuery('.code-block-13 .close').click(function(){
+           jQuery('.code-block-13').hide();
+      });
+   });</script></div>
+<!-- /.site-content -->
+        
+        <div class="container">
+            <footer class="footer"> 
+                <div class="pull-left"> We just moved our blog! Does something seem off? Email <a>support@logrocket.com</a> </div> 
+                <div class="pull-right"> <div class="footerRight"><div id="jetpack-search-filters-2-wrapper">
+		<div class="jetpack-search-form"><form role="search" method="get" class="search-form" action="https://blog.logrocket.com/">
+<input type="hidden" name="post_type" value="post">
+<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+<button type="submit" class="search-submit">
+<i class="fa fa-search"></i>   
+</button>
+<input type="hidden" name="orderby" value="relevance"><input type="hidden" name="order" value="DESC"><input type="hidden" name="post_type" value="post"></form></div></div></div>  </div> 
+                <div class="clearfix"></div>
+                <a href="https://blog.logrocket.com/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36/" class="back-to-top hidden-md-down" style="display: inline;"> 
+                <i class="fa fa-angle-up"></i>
+                </a>
+            </footer>
+        </div>
+        <script>
+  var ai_insert_13 = function(){
+    ai_insert ('after', '.site-content', b64d ('PGRpdiBjbGFzcz0nY29kZS1ibG9jayBjb2RlLWJsb2NrLTEzJyBzdHlsZT0nbWFyZ2luOiA4cHggMDsgY2xlYXI6IGJvdGg7Jz4KPGRpdiBjbGFzcz0iY3JvLTgiPjxkaXYgY2xhc3M9ImNybzgtd3JhcCI+PGRpdiBjbGFzcz0iY3JvOC1jb250ZW50LXJpZ2h0Ij48ZGl2IGNsYXNzPSJjcm84LWNvcHkiPjxoND5TdG9wIEd1ZXNzaW5nIFdoeSBCdWdzIEhhcHBlbi4gPHNwYW4gc3R5bGU9ImNvbG9yOiAjNzY0YWJjOyI+VHJ5IExvZ1JvY2tldCBmb3IgRnJlZS48L3NwYW4+PC9oND48L2Rpdj48ZGl2IGNsYXNzPSJjcm84LWN0YSI+PGEgaHJlZj0iaHR0cHM6Ly9sb2dyb2NrZXQuY29tL3NpZ251cC8iPjxidXR0b24gY2xhc3M9ImNybzgtYnV0dG9uIj5HZXQgU3RhcnRlZDwvYnV0dG9uPjwvYT48c3BhbiBjbGFzcz0iY2xvc2UiIHN0eWxlPSJmb250LXdlaWdodDogMTAwOyI+WDwvc3Bhbj48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj4KCjxzdHlsZT4uY29kZS1ibG9jay0xM3tvcGFjaXR5OjA7bWFyZ2luOiAwICFpbXBvcnRhbnQ7IHBvc2l0aW9uOiBmaXhlZDsgd2lkdGg6IDEwMCU7IGJvdHRvbTogMDsgbGVmdDogMDsgYmFja2dyb3VuZDogI2ZmZmZmZjstd2Via2l0LWJveC1zaGFkb3c6IDBweCAtMTFweCAxMHB4IC01cHggcmdiYSgyMTMsMjEzLDIxMywwLjgpOwotbW96LWJveC1zaGFkb3c6IDBweCAtMTFweCAxMHB4IC01cHggcmdiYSgyMTMsMjEzLDIxMywwLjgpOwpib3gtc2hhZG93OiAwcHggLTExcHggMTBweCAtNXB4IHJnYmEoMjEzLDIxMywyMTMsMC44KTt9IAouY3JvOC13cmFwe2Rpc3BsYXk6IGJsb2NrOwogICAgbWFyZ2luOiAwIGF1dG87CiAgICB3aWR0aDogNjUlO30KLmNybzgtaW1hZ2UtcmlnaHQge3dpZHRoOjEwJTsgZmxvYXQ6bGVmdDtwYWRkaW5nLXRvcDo1cHg7fQouY3JvOC1jb250ZW50LXJpZ2h0e3dpZHRoOjEwMCU7ZmxvYXQ6bGVmdDt9IAouY3JvOC1jb250ZW50LXJpZ2h0IC5jcm84LWNvcHkge2Zsb2F0OmxlZnQ7IHBhZGRpbmctdG9wOjE1cHg7IHBhZGRpbmctYm90dG9tOjEwcHg7IG1hcmdpbi1sZWZ0OjIuNCU7fSAKLmNybzgtY29udGVudC1yaWdodCAuY3JvOC1jb3B5IGg0IHttYXJnaW4tYm90dG9tOiAwcHg7fQouY3JvOC1jdGEge3dpZHRoOiAyMiU7IGZsb2F0OiBsZWZ0OyBtYXJnaW4tbGVmdDo0JTt9Ci5jcm84LWJ1dHRvbiB7d2lkdGg6IDEzMHB4O2Zsb2F0OiBsZWZ0O2Rpc3BsYXk6IGJsb2NrOwptYXJnaW46IDVweCBhdXRvIDBweCBhdXRvO3BhZGRpbmc6IDdweCAxNXB4OwogICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgIzkwYmM0YSwgIzU3YmM0YSk7CiAgICBjb2xvcjogI2ZmZmZmZjsKICAgIGZvbnQtc2l6ZTogMTZweDsgZm9udC1mYW1pbHk6ICJQVCBTYW5zIiwgSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjt9IAouY29kZS1ibG9jay0xMyBoNCwgLmNvZGUtYmxvY2stMTMgcCB7d2lkdGg6IDEwMCU7fSAKLmNsb3NlIHtmbG9hdDogbGVmdDsKICAgIG1hcmdpbi10b3A6IDIwcHg7CiAgICBtYXJnaW4tbGVmdDogNjBweDtmb250LXNpemU6MTVweDsgY29sb3I6ICNjOGM4Yzg7fQogICAgQG1lZGlhIGFsbCBhbmQgKG1heC13aWR0aDogNjAwcHgpewogICAgLmNybzgtY3RhIHt3aWR0aDogMTAwJTsgbWFyZ2luLWJvdHRvbTogMTVweDt9CiAgICAuY2xvc2Uge21hcmdpbi1sZWZ0OiAzNXB4O30KICAgIH0KICAgIAogICAgPC9zdHlsZT4KCjxzY3JpcHQ+ICBqUXVlcnkoZG9jdW1lbnQpLnJlYWR5KGZ1bmN0aW9uKCl7CiAgICAgIGpRdWVyeSgnLmNvZGUtYmxvY2stMTMnKS5oaWRlKCk7CiAgICAgIHNldFRpbWVvdXQoCiAgICAgICAgZnVuY3Rpb24oKQogICAgICAgIHsKICBqUXVlcnkoJy5jb2RlLWJsb2NrLTEzJykuY3NzKCJvcGFjaXR5IiwiMSIpOwogIGpRdWVyeSgnLmNvZGUtYmxvY2stMTMnKS5zbGlkZURvd24oInNsb3ciKTsKICAgICAgICB9LCAzMDAwMCk7CiAgICAgIGpRdWVyeSgnLmNvZGUtYmxvY2stMTMgLmNsb3NlJykuY2xpY2soZnVuY3Rpb24oKXsKICAgICAgICAgICBqUXVlcnkoJy5jb2RlLWJsb2NrLTEzJykuaGlkZSgpOwogICAgICB9KTsKICAgfSk7PC9zY3JpcHQ+PC9kaXY+Cg=='));
+  };
+  if (document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll)) ai_insert_13 (); else document.addEventListener ('DOMContentLoaded', ai_insert_13);
+</script>
+<script>
+setTimeout (function() {Array.prototype.forEach.call (document.querySelectorAll (".ai-viewports"), function (element, index) {ai_insert_code (element);});}, 10);
+
+</script>
+<!--  -->
+<script>window.onload = function() {
+    if (window.jQuery) {
+      jQuery(document).ready(function() {
+        if(jQuery(('.text-capitalize').length) && (typeof heap !== 'undefined'))
+        {
+         var postLength = jQuery('.wordcount').text();
+         var postAuthor = jQuery('.text-capitalize').first().text();
+         var postAuthorclean = postAuthor.replace(' Follow','').replace('                                ','');
+         heap.track('Post Author', {'Author': postAuthorclean});
+         heap.track('Post Length', {'Length': postLength});
+       }
+       if (typeof hljs !== 'undefined')
+       {
+       document.querySelectorAll('pre').forEach((block) => {
+         hljs.highlightBlock(block);
+       });
+       }
+      });
+    } else {
+      return;
+    }
+}
+</script>
+
+
+<script defer="defer">
+jQuery(document).ready(function() {
+  var currentPage = jQuery(location).attr('href');
+  jQuery('.blog-logo').click(function() {
+      analytics.track('CRO', {
+  category: 'logo-click',
+  label: currentPage,
+});
+  });
+});
+</script>
+
+
+
+<script>if (typeof jQuery !== 'undefined') {
+    jQuery(function(){
+      jQuery('a[href*="/signup/"]').each(function(){
+            jQuery(this).addClass('signup');
+          });    });    }</script>
+
+<script>jQuery(document).ready(function() {
+        if(typeof heap !== 'undefined')
+        {
+          setTimeout(function(){
+            heap.track('View Greater 30s', {'> 30s': 'true'});
+          },30000);
+             }
+      });</script>	<div style="display:none">
+	<div class="grofile-hash-map-c0f71d3a974d11b26617982eea142544">
+	</div>
+	<div class="grofile-hash-map-468cc509d1ad01ff4512711d055c6ebc">
+	</div>
+	<div class="grofile-hash-map-d88c1619853a3f5e033667dc3c355cc9">
+	</div>
+	<div class="grofile-hash-map-de8225213d7b8bc59895625735574f7d">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/blog.logrocket.com\/the-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36\/":353};
+	</script>
+				<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/photon.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var codePrettifyLoaderBaseUrl = "https:\/\/blog.logrocket.com\/wp-content\/plugins\/code-prettify\/prettify";
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/blog.logrocket.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/scripts.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/tether.min.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/bootstrap.min.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/ie10-viewport-bug-workaround.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/masonry.pkgd.min.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/mediumish.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/search-widget.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/lazy-images.min.js"></script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/queuehandler.min.js"></script>
+<script type="text/javascript" async="async" src="./LocalStorage in JavaScript - LogRocket Blog_files/wp-embed.min.js"></script>
+<script async="async" type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/form.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/sharing.min.js"></script>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=161333275&postid=353&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.6&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=cf4f70c3bbf36534ad36535575c09c224872a302#parent=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=161333275&postid=353&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=7.6&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=cf4f70c3bbf36534ad36535575c09c224872a302#parent=https%3A%2F%2Fblog.logrocket.com%2Fthe-complete-guide-to-using-localstorage-in-javascript-apps-ba44edb53a36%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type="text/javascript" src="./LocalStorage in JavaScript - LogRocket Blog_files/e-201934.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.6',blog:'161333275',post:'353',tz:'-4',srv:'blog.logrocket.com'} ]);
+	_stq.push([ 'clickTrackerInit', '161333275', '353' ]);
+</script>
+                 
+
+<script src="./LocalStorage in JavaScript - LogRocket Blog_files/adsct" type="text/javascript"></script><img src="./LocalStorage in JavaScript - LogRocket Blog_files/g.gif" alt=":)" width="6" height="5" id="wpstats"><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" src="./LocalStorage in JavaScript - LogRocket Blog_files/saved_resource(5).html"></iframe><div id="intercom-css-container"><style data-emotion="intercom-global"></style><style data-emotion="intercom"></style></div><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><iframe allowfullscreen="" class="intercom-launcher-frame intercom-1t523v2 e1ur5zlj0" name="intercom-launcher-frame" title="Intercom live chat" data-intercom-frame="true" src="./LocalStorage in JavaScript - LogRocket Blog_files/saved_resource(6).html"></iframe><div id="intercom-modal-container"></div></div></div></body></html>
