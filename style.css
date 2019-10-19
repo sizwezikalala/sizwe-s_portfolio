@@ -1,0 +1,1131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Fira Sans', sans-serif;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+
+    background: linear-gradient(-80deg, rgba(0, 0, 0, 0.842),
+            rgba(255, 205, 0, 0.514)),
+        url(/imgs/lite.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50rem;
+    margin: 0;
+}
+
+.layout {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    outline: 0;
+    text-decoration: none;
+
+}
+
+/* logo animation */
+.logo {
+    height: 8rem;
+    transition: all .7s;
+}
+
+@keyframes banner {
+    0% {
+        background-position: 0% 0%;
+        opacity: .2;
+    }
+
+    50% {
+        transform: scale(1, 1.1);
+        opacity: 0.5;
+        transform: translate(-5rem, 0);
+        box-shadow: -3rem 2.5rem 2rem rgba(0, 0, 0, 0.164);
+    }
+
+
+    100% {
+
+        background-position: center;
+        opacity: 0;
+    }
+}
+
+@keyframes slideContent {
+    0% {
+        transform: translateX(-20rem);
+        opacity: .2;
+
+    }
+
+    50% {
+        transform: translateX(-15rem);
+        opacity: .5;
+        box-shadow: -3rem 2.5rem 2rem rgba(0, 0, 0, 0.164);
+    }
+
+    70% {
+        transform: translateX(-5rem);
+        opacity: 0;
+    }
+
+
+    100% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+
+.logo:hover {
+    animation-name: banner;
+    animation-duration: .8s;
+    animation-direction: forwards;
+    perspective: 1000;
+    border: unset;
+
+}
+
+
+.navigation {
+
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+    background-color: rgba(0, 0, 0, 0.205);
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.menu__item {
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: 2rem;
+}
+
+.menu__title {
+    display: inline-block;
+    overflow: hidden;
+
+}
+
+.menu__first-word,
+.menu__second-word {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.menu__first-word::before,
+.menu__second-word::before {
+    position: absolute;
+    content: attr(data-hover);
+}
+
+.menu__first-word {
+    color: #eee;
+}
+
+.menu__first-word::before {
+    top: 105%;
+    color: gold;
+}
+
+.menu__second-word {
+    color: gold;
+}
+
+.menu__second-word::before {
+    bottom: 105%;
+    color: #eee;
+}
+
+.menu__item:last-child .menu__link {
+    border-right: 0;
+}
+
+.menu__link {
+    display: block;
+    padding: .3rem 3rem .3rem;
+    border-right: 2px double #ccd7d7;
+
+
+}
+
+.menu__link:hover .menu__first-word,
+.menu__link:focus .menu__first-word {
+    transform: translate3d(0, -105%, 0);
+}
+
+
+.menu__link:hover .menu__second-word,
+.menu__link:focus .menu__second-word {
+    transform: translate3d(0, 105%, 0);
+}
+
+.menu__link {
+    padding: .3rem 4rem .2rem;
+}
+.header{
+    overflow: unset; 
+}
+
+.header-cover-content {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.header-left {
+    width: 50%;
+    height: 20rem;
+    transform: translateY(5rem);
+
+}
+
+.header-left-img {
+    margin-top: 5rem;
+    width: 22.5rem;
+
+    outline: 5px solid gold;
+    outline-offset: 1rem;
+
+
+    transition: all.95s;
+    overflow: hidden;
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+
+}
+
+.header-left-img:hover {
+    transform: scale(1.08);
+    border-radius: 1.5rem;
+    outline-offset: 1.5rem;
+    box-shadow: -3rem 2.5rem 2rem rgba(0, 0, 0, 0.5);
+
+
+}
+
+.header-sub-title {
+    color: #eee;
+    font-size: 5.5rem;
+}
+
+.header-right {
+    width: 50%;
+    height: 20rem;
+    transform: translateY(2rem);
+
+
+}
+
+.header-text {
+    color: gold;
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+.header-btn {
+
+    transform: translateY(-3.5rem);
+    width: 8.5rem;
+}
+
+
+.btn {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1.1rem 1.1rem;
+    border: .5px solid gold;
+    color: gold;
+    background: transparent;
+
+}
+
+.btn:hover {
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.5);
+    border-radius: .5rem;
+    color: #000;
+    background: gold;
+    transition: all .2s;
+}
+
+#about {
+    background-color: #000;
+    font-size: 1.1rem;
+
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .2rem solid gold;
+}
+
+.info {
+    color: #eee;
+
+}
+
+.label {
+    color: gold;
+    padding-right: 12rem;
+
+}
+
+.about-title {
+    color: gold;
+    font-size: 1.5rem;
+}
+
+.about-paragragh {
+    color: #eee;
+}
+
+.about-container {
+    padding: 2rem 2rem;
+
+}
+
+.about-heading {
+    margin-left: 10rem;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.about-img {
+    width: 20rem;
+    height: 20rem;
+    opacity: .3;
+    border: 2px solid gold;
+    border-radius: 100%;
+
+    transition: all .7s;
+}
+
+.about-img:hover {
+    animation-name: banner;
+    animation-duration: .8s;
+    animation-iteration-count: auto;
+    animation-direction: backwards;
+    perspective: 1000;
+}
+
+.about-text {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+
+.sub-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 3.5rem;
+    font-size: 1.5rem;
+}
+
+.gallery {
+    margin-top: 5rem;
+    font-size: 1.1rem;
+    padding: .5rem .5rem;
+    display: flex;
+    margin: .5rem;
+
+    transition: all.95s;
+    overflow: hidden;
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+}
+
+.img__wrap {
+    position: relative;
+    height: 20rem;
+    width: 35%;
+    text-align: center;
+
+}
+
+.img__img {
+    margin-top: 2rem;
+    height: 15.5rem;
+    width: 18rem;
+
+
+
+
+}
+
+.img__wrap:hover {
+    transform: scale(1, 1.);
+    transition: all.3s;
+}
+
+.img__description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.219);
+    color: gold;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+#skills {
+    margin-top: 5.5rem;
+    padding: 1.5rem 1.5rem;
+    background-color: #000;
+}
+
+
+
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    color: #eee;
+}
+
+.skills-text-container {
+    width: 40%;
+
+
+}
+
+.fas {
+    font-size: 3.5rem;
+    vertical-align: middle;
+    margin-left: -5rem;
+
+    color: #eee;
+}
+
+.skills-title {
+    font-size: 1.5rem;
+    color: gold;
+
+    transition: all.95s;
+    overflow: hidden;
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+}
+
+.skills-sub-title {
+    line-height: 8rem;
+}
+
+.skills-text {
+    font-size: 1.1rem;
+
+
+}
+
+#projects {
+    padding: 1rem 1rem;
+    width: 100%;
+
+    height: 40rem;
+
+    
+    margin-top: 5rem;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.projects-sub-title {
+    line-height: 8rem;
+    margin-top: -3.5rem;
+
+    transition: all.95s;
+    overflow: hidden;
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+
+}
+
+.title-style {
+    font-size: 5.5rem;
+    text-transform: uppercase;
+    color: gold;
+    border-bottom: .5rem solid #eee;
+}
+
+.previouswork {
+    position: relative;
+    width: 20rem;
+
+
+}
+
+.previouswork__photo {
+    width: 50%;
+    height: 30rem;
+    margin-top: -2.5rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    overflow: auto;
+}
+
+.previouswork__photo--p1 {
+    top: 5rem;
+    left: -25rem;
+}
+
+.previouswork__photo--p2 {
+    top: 5rem;
+    right: 20.5rem;
+
+}
+
+.previouswork__photo--p3 {
+    top: 5rem;
+    left: 4rem;
+
+}
+
+.previouswork__photo:hover {
+    outline: 1.5rem solid gold;
+    transform: scale(1.3) translateY(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+
+.previouswork:hover .previouswork__photo:not(:hover) {
+    transform: scale(0.95);
+}
+
+
+/* form */
+
+#form-container {
+    background-image: url(/imgs/contactme.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 35rem;
+    padding-top: 4rem !important;
+}
+
+.form {
+    width: 35rem;
+    height: 30rem;
+    background: #eee;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    transition: all 0.2s;
+    outline-offset: 1.5rem;
+    border-radius: .5rem;
+    padding: 2rem 2rem;
+    opacity: .7;
+    box-sizing: border-box;
+    position: relative;
+
+
+
+    transition: all.95s;
+    overflow: hidden;
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+}
+
+.form:hover {
+    outline: 1rem solid rgba(0, 0, 0, 0.308);
+    transform: scale(1.2) translateY(.6rem);
+    box-shadow: 0 2.5rem 2rem rgba(0, 0, 0, 0.4);
+    z-index: 20;
+    opacity: 1;
+
+}
+
+.form-title {
+
+    width: 18rem;
+    color: #78788c;
+    font-weight: bold;
+    border-bottom: 3px solid #78788c
+}
+
+input {
+    width: 100%;
+    padding: 1;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+    border-bottom: 2px solid #bebed2;
+
+}
+
+input:focus {
+    border-bottom: 2px solid #78788c
+}
+
+.form-label:before {
+    content: attr(type);
+    display: block;
+    margin: 2.8rem 0 0;
+    font-size: 14px;
+    color: black;
+}
+
+.form-btn {
+    float: right;
+    padding: .7rem 1.1rem;
+    margin: 8px 0 0;
+    cursor: pointer;
+    transition: all .3s;
+    border: .5px solid black;
+    color: #000;
+}
+
+.form-btn:hover {
+    background: #000;
+    color: #fff
+}
+
+.form-credentials {
+    content: 'Hi';
+    position: absolute;
+    bottom: -1.5rem;
+    right: -2rem;
+    background: #50505a;
+    color: #fff;
+    width: 32rem;
+    padding: 1.5rem 4px 1.5rem 0;
+    border-radius: 6px;
+    font-size: 13px;
+    box-shadow: 1rem 1rem 4rem -1.4rem #000;
+}
+
+#form-icon {
+    margin: 0 5px 0 1.5rem;
+}
+
+
+
+#footer {
+    height: 20rem;
+    border: .1rem solid black;
+    background: linear-gradient(20deg, rgba(0, 0, 0, 0.699),
+            rgba(255, 204, 0, 0.315)),
+        url(/imgs/footer-bcolo.jpeg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+    color: #eee;
+
+
+}
+
+.footer-sub-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+
+
+}
+
+.socials {
+    text-align: center;
+
+
+}
+
+.fab {
+
+    color: gold;
+    margin: .5rem;
+    font-size: 1.7rem;
+}
+
+.fab:hover {
+    color: #eee;
+    box-shadow: -3rem 2.5rem 2rem rgba(0, 0, 0, 0.5);
+
+    transform: scale(1, 1.1);
+}
+
+.footer-info {
+    font-size: 1.1rem;
+
+    transition: all.95s;
+
+    animation-name: slideContent;
+    animation-duration: .75s;
+    animation-direction: backwards;
+    perspective: 2000;
+}
+
+.footer-text {
+    font-size: 1rem;
+
+
+}
+
+.mail-me pre {
+    font-weight: bolder;
+}
+
+.footer-btn {
+    transform: translate(4rem, .8rem);
+}
+
+.pages {
+    text-align: center;
+    margin-left: -1.5rem;
+}
+
+.pages li {
+    display: inline-block;
+    margin: .5rem;
+
+    font-size: 1.1rem;
+
+    color: #eee;
+    text-transform: uppercase;
+}
+
+li:hover {
+    color: gold;
+}
+
+.copyright {
+    color: #000;
+    text-align: center;
+    font-weight: bolder;
+    background: #eee;
+    font-size: 1rem;
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+    .hide-me-landscape {
+        display: none;
+    }
+
+    .header {
+        height: 40rem;
+  
+    }
+
+    .navigation {
+        font-size: 1rem;
+        height: 6.5rem;
+    }
+
+    .menu__link {
+        padding: .3rem 2.5rem .2rem;
+    }
+
+    .header-left {
+        width: 50%;
+        height: 20rem;
+        transform: translateY(5rem);
+    }
+
+    .header-left-img {
+        margin-top: 3rem;
+        width: 17.5rem;
+    }
+
+    .header-right {
+        margin-top: 3rem;
+    }
+
+    .header-sub-title {
+        font-size: 4.5rem;
+    }
+
+    .header-text {
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+
+    .header-btn {
+        transform: translateY(-1.5rem);
+        width: 6.5rem;
+    }
+
+    .about-container {
+        padding: 4.5rem 4.5rem;
+
+    }
+
+    .about-heading {
+        display: none;
+    }
+
+    .about-img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+
+    .gallery {
+        margin: .1rem;
+
+
+    }
+
+
+    .img__img {
+        margin-top: 2rem;
+        padding: .5rem .5rem;
+        height: 15.5rem;
+        width: 12.5rem;
+
+    }
+
+    #skills {
+        padding: 3.5rem 3.5rem;
+    }
+
+    .fas {
+        font-size: 2.5rem;
+    }
+
+    .skills-text {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .skills-sub-title {
+        line-height: 8rem;
+        margin-top: 8rem;
+        font-size: 11rem;
+    }
+
+    #projects {
+        padding: 1.5rem 1.5rem;
+        width: 100%;
+        height: 30rem;
+        margin-top: 5rem;
+    }
+
+    .projects-sub-title {
+        line-height: 6rem;
+        margin-top: 2rem;
+    }
+
+    .title-style {
+        font-size: 4rem;
+    }
+
+    .previouswork__photo {
+        width: 10rem;
+        height: 20rem;
+    }
+
+    .previouswork__photo--p1 {
+        left: -4.5rem;
+    }
+
+    .previouswork__photo--p2 {
+        right: 14rem;
+    }
+
+    .previouswork__photo--p3 {
+
+        left: 16.5rem;
+    }
+
+    /* foooter */
+
+    #footer {
+        height: 17rem;
+        padding: .5rem .5rem;
+    }
+
+    .footer-btn {
+        transform: translate(4rem, .6rem);
+        transition: all.7s;
+    }
+
+    .footer-wrap {
+        margin-top: 2rem;
+    }
+
+    .footer-sub-title {
+        font-size: 1.2rem;
+    }
+
+    .fab {
+        font-size: 1.25rem;
+    }
+
+    .fab:hover {
+        transform: scale(1.25);
+    }
+
+    .footer-info {
+        font-size: .95rem;
+    }
+
+    .pages li {
+        font-size: .75rem;
+    }
+
+    .mail-me {
+        font-weight: bolder;
+        color: #eee;
+        letter-spacing: 1px;
+        text-shadow: 3rem 2.5rem 2rem rgba(0, 0, 0, 0.5);
+
+    }
+
+}
+
+
+
+
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 640px) {
+
+    .logo {
+        height: 4rem;
+    }
+
+    .navigation {
+        font-size: .3rem;
+        height: 5.5rem;
+    } 
+
+    .menu__link {
+        padding: .2rem 0.4rem .1rem;
+    }
+
+    .header-cover-content {
+        display: unset;
+    }
+
+    .header-left-img {
+        margin-top: -3.5rem;
+        transform: translate(3.5rem, 3rem);
+        width: 13rem;
+    }
+
+    .header-right {
+        margin-top: -3.5rem;
+    }
+
+    .header-sub-title {
+        font-size: 2.5rem;
+
+    }
+
+    .header-text {
+        font-size: 1.5rem;
+        text-align: center;
+        transform: translate(5.5rem, 2rem);
+    }
+
+    .header-btn {
+        transform: translate(7rem, 4rem);
+        width: 6.5rem;
+    }
+
+    .about-container {
+        padding: 1.5rem 
+        1.5rem;
+
+    }
+
+    .about-heading {
+        margin-left: 2.5rem;
+    }
+
+    .about-img {
+       display: none;
+    }
+   
+
+    .gallery {
+        margin: .1rem;
+
+    }
+
+
+    .img__img {
+        margin-top: 2rem;
+        padding: .5rem .5rem;
+        height: 15.5rem;
+        width: 12.5rem;
+
+    }
+
+    #skills {
+        padding: 3.5rem 3.5rem;
+    }
+
+    .fas {
+        font-size: 2.5rem;
+    }
+
+    .skills-text {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .skills-sub-title {
+        line-height: 8rem;
+        margin-top: 8rem;
+        font-size: 11rem;
+    }
+
+    #projects {
+        padding: 1.5rem 1.5rem;
+        width: 100%;
+        height: 30rem;
+        margin-top: 5rem;
+    }
+
+    .projects-sub-title {
+        line-height: 6rem;
+        margin-top: 2rem;
+    }
+
+    .title-style {
+        font-size: 4rem;
+    }
+
+    .previouswork__photo {
+        width: 10rem;
+        height: 20rem;
+    }
+
+    .previouswork__photo--p1 {
+        left: -4.5rem;
+    }
+
+    .previouswork__photo--p2 {
+        right: 14rem;
+    }
+
+    .previouswork__photo--p3 {
+
+        left: 16.5rem;
+    }
+
+    /* foooter */
+
+    #footer {
+        height: 30rem;
+        padding: .5rem .5rem;
+    }
+
+    .footer-btn {
+        transform: translate(4rem, .6rem);
+        transition: all.7s;
+    }
+
+    .footer-wrap {
+        margin-top: 2rem;
+    }
+
+    .footer-sub-title {
+        font-size: 1.2rem;
+    }
+
+    .fab {
+        font-size: 1.25rem;
+    }
+
+    .fab:hover {
+        transform: scale(1.25);
+    }
+
+    .footer-info {
+        font-size: .95rem;
+        
+    }
+
+    .pages li {
+        font-size: .75rem;
+      
+    }
+
+    .mail-me {
+        font-weight: bolder;
+        color: #eee;
+        letter-spacing: 1px;
+        text-shadow: 3rem 2.5rem 2rem rgba(0, 0, 0, 0.5);
+
+    }
+
+
+}
